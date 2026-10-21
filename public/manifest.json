@@ -1,0 +1,15 @@
+{
+  "short_name": "Gate",
+  "name": "Gate Hypermarket",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0B1A22",
+  "theme_color": "#E65100",
+  "display": "standalone"
+}

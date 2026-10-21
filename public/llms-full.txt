@@ -1,0 +1,33 @@
+# Gate Hypermarket — Full Context Knowledge File
+URL: https://yourdomain.com
+Last Updated: 2026-10-20
+
+## Corporate Overview
+Gate Hypermarket is an independent retail and grocery chain with four hypermarket branches serving Dubai and Ajman, United Arab Emirates. Gate is dedicated to fresh food halls, quality produce, imported world foods, household necessities, and competitive pricing without requiring memberships or online markup.
+
+## Core Pillars
+1. Fresh Produce Halls: Fresh fruits, leafy greens, and vegetables delivered daily from regional farms and international air shipments.
+2. Master Butchery & Seafood: Halal certified fresh beef, lamb, poultry, and local Arabian Gulf catch.
+3. In-Store Artisan Bakery: Arabic flatbreads, khubz, sourdough, pastries, and cakes baked fresh every morning.
+4. World Foods Aisles: Dedicated zones for South Asian, Arab, Levantine, East Asian, and European culinary staples.
+5. Seasonal Promotions: Bi-weekly multi-page digital circulars offering deep discounts across bulk groceries, home cleaning, cookware, and personal care.
+
+## Store Directory
+### Al Barsha 
+- City: dubai
+- Address: qwertyosedrfhj
+- Coordinates: Lat 25.112585, Lng 55.196905
+- Phone: +91 1234567890
+- Operating Hours: Daily · 6:00 AM – 10:30 PM
+- Key Features: qwertyj, qwerp[, qwertyu
+- Store URL: https://yourdomain.com/stores/al-barsha
+
+## Frequently Asked Questions (FAQ)
+Q: Does Gate Hypermarket deliver groceries online?
+A: Gate focuses on providing the absolute lowest prices and freshest halls directly in-store. Customers visit our stores in Al Barsha, Al Quoz, Sabkha, and Ajman to enjoy the promotions and select their fresh items in person.
+
+Q: How often are new promotion flyers published?
+A: New digital flyers are launched regularly, typically every fortnight or aligned with festive occasions (Ramadan, Eid, Back to School, National Day).
+
+Q: How can job seekers apply for open positions?
+A: Job openings are listed at https://yourdomain.com/careers where applicants can submit their CV directly for active vacancies or open talent pools.

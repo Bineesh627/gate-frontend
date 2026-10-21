@@ -1,0 +1,100 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "Supermarket"
+      ],
+      "@id": "https://yourdomain.com/#organization",
+      "name": "Gate Hypermarket",
+      "url": "https://yourdomain.com",
+      "logo": "https://yourdomain.com/images/logo.png",
+      "image": "https://yourdomain.com/images/hero-banner.jpg",
+      "description": "Hello how are you are you free right know",
+      "telephone": "123456789",
+      "email": "gate@gmail.com",
+      "sameAs": [
+        "https://instagram.com/gatehypermarket",
+        "https://facebook.com/gatehypermarket",
+        "https://youtube.com/@gatehypermarket",
+        "https://twitter.com/gatehypermarket",
+        "https://tiktok.com/@gatehypermarket"
+      ],
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Dubai",
+          "addressCountry": "AE"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Ajman",
+          "addressCountry": "AE"
+        }
+      ],
+      "department": [
+        {
+          "@type": "GroceryStore",
+          "@id": "https://yourdomain.com/stores/al-barsha#store",
+          "name": "Al Barsha ",
+          "url": "https://yourdomain.com/stores/al-barsha",
+          "image": "https://yourdomain.com/uploads/stores/WhatsApp_Image_2026-09-01_at_11_30_15-1792491265526-633614920.jpeg",
+          "telephone": "+91 1234567890",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "qwertyosedrfhj",
+            "addressLocality": "dubai",
+            "addressRegion": "Dubai",
+            "addressCountry": "AE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 25.112585,
+            "longitude": 55.196905
+          },
+          "openingHours": "Daily · 6:00 AM – 10:30 PM",
+          "priceRange": "$$"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yourdomain.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where are Gate Hypermarket stores located in the UAE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gate Hypermarket operates 4 stores: Al Barsha ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Gate Hypermarket opening hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All Gate Hypermarket branches in Dubai and Ajman are open daily from 7:00 AM until 1:00 AM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I view current promotion flyers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Current multi-page promotional circulars can be viewed online at https://yourdomain.com/promotions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I apply for jobs at Gate Hypermarket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Job opportunities and direct CV submission are available at https://yourdomain.com/careers."
+          }
+        }
+      ]
+    }
+  ]
+}

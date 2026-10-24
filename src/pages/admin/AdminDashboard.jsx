@@ -431,6 +431,11 @@ export default function AdminDashboard() {
       alert("Upload failed: " + err.message);
     } finally {
       setUploading(false);
+      try {
+        if (e?.target) e.target.value = "";
+      } catch {
+        // Ignore input reset error
+      }
     }
   };
 
@@ -1770,11 +1775,24 @@ export default function AdminDashboard() {
                       <tr key={s.id || s.slug} className="hover:bg-slate-50/70 transition-colors">
                         <td className="py-4 pr-4">
                           <div className="flex items-center gap-3">
-                            <img
-                              src={s.image}
-                              alt={s.image_alt || s.name}
-                              className="h-12 w-16 rounded-xl object-cover border border-slate-200"
-                            />
+                            {s.image ? (
+                              <img
+                                src={marketApi.resolveAssetUrl(s.image)}
+                                alt={s.image_alt || s.name}
+                                className="h-12 w-16 rounded-xl object-cover border border-slate-200 bg-slate-100 shrink-0"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                  const placeholder = e.currentTarget.nextElementSibling;
+                                  if (placeholder) placeholder.style.display = "flex";
+                                }}
+                              />
+                            ) : null}
+                            <div
+                              className="h-12 w-16 rounded-xl bg-slate-100 border border-slate-200 items-center justify-center text-slate-400 shrink-0"
+                              style={{ display: s.image ? "none" : "flex" }}
+                            >
+                              <Store className="h-5 w-5" />
+                            </div>
                             <div>
                               <span className="font-heading font-bold text-base block text-slate-900">
                                 {s.name}
@@ -2113,12 +2131,14 @@ export default function AdminDashboard() {
                           id="store-image"
                           name="image"
                           type="text"
+                          placeholder="/uploads/stores/... or https://..."
                           value={storeForm.image}
                           onChange={(e) => setStoreForm({ ...storeForm, image: e.target.value })}
-                          className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs outline-none"
+                          className="w-full rounded-xl border border-slate-200 px-3 py-2 text-xs outline-none focus:border-[#007BB5]"
                         />
-                        <label htmlFor="store-image-file" className="cursor-pointer inline-flex items-center gap-1 rounded-xl bg-slate-100 px-3 py-2 text-xs font-semibold hover:bg-slate-200">
+                        <label htmlFor="store-image-file" className="cursor-pointer inline-flex items-center gap-1.5 rounded-xl bg-[#007BB5] text-white px-3 py-2 text-xs font-semibold hover:bg-[#006699] transition-colors shrink-0 shadow-xs">
                           <Upload className="h-3.5 w-3.5" />
+                          {uploading ? "..." : "Upload"}
                           <input
                             id="store-image-file"
                             name="image_file"
@@ -2131,6 +2151,40 @@ export default function AdminDashboard() {
                             }
                           />
                         </label>
+                      </div>
+
+                      {/* Store Image Live Preview */}
+                      <div className="mt-2 relative h-28 w-full rounded-xl border border-slate-200 bg-slate-50 overflow-hidden flex items-center justify-center">
+                        {storeForm.image ? (
+                          <>
+                            <img
+                              src={marketApi.resolveAssetUrl(storeForm.image)}
+                              alt={storeForm.image_alt || storeForm.name || "Store preview"}
+                              className="h-full w-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.style.display = "none";
+                                const fallback = e.currentTarget.nextElementSibling;
+                                if (fallback) fallback.style.display = "flex";
+                              }}
+                            />
+                            <div className="hidden h-full w-full items-center justify-center text-xs text-rose-500 bg-rose-50 font-medium">
+                              Image failed to load
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => setStoreForm((prev) => ({ ...prev, image: "" }))}
+                              className="absolute top-1.5 right-1.5 rounded-full bg-slate-900/70 p-1 text-white hover:bg-slate-900 transition-colors"
+                              title="Remove image"
+                            >
+                              <X className="h-3.5 w-3.5" />
+                            </button>
+                          </>
+                        ) : (
+                          <div className="flex flex-col items-center gap-1 text-slate-400 text-xs">
+                            <ImageIcon className="h-6 w-6 text-slate-300" />
+                            <span>No store image selected</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div>
@@ -2417,15 +2471,33 @@ export default function AdminDashboard() {
 
                         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 aspect-video relative flex items-center justify-center">
                           {postImage ? (
-                            <img
-                              src={postImage}
-                              alt={postImageAlt || "Post preview"}
-                              className="w-full h-full object-cover"
-                            />
+                            <>
+                              <img
+                                src={marketApi.resolveAssetUrl(postImage)}
+                                alt={postImageAlt || "Post preview"}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                  const fallback = e.currentTarget.nextElementSibling;
+                                  if (fallback) fallback.style.display = "flex";
+                                }}
+                              />
+                              <div className="hidden h-full w-full items-center justify-center text-xs text-rose-500 bg-rose-50 font-medium">
+                                Image failed to load
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => setPostImage("")}
+                                className="absolute top-2 left-2 rounded-full bg-slate-900/70 p-1.5 text-white hover:bg-slate-900 transition-colors z-10"
+                                title="Remove image"
+                              >
+                                <X className="h-3.5 w-3.5" />
+                              </button>
+                            </>
                           ) : (
                             <span className="text-xs text-slate-400">No image chosen</span>
                           )}
-                          <label htmlFor="blog-image-file" className="absolute bottom-2 right-2 cursor-pointer inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 px-3 py-1.5 text-xs font-bold text-white backdrop-blur hover:bg-slate-900">
+                          <label htmlFor="blog-image-file" className="absolute bottom-2 right-2 cursor-pointer inline-flex items-center gap-1.5 rounded-full bg-slate-900/80 px-3 py-1.5 text-xs font-bold text-white backdrop-blur hover:bg-slate-900 transition-colors z-10">
                             <Upload className="h-3.5 w-3.5" />
                             {uploading ? "Uploading..." : "Upload New"}
                             <input
@@ -2574,11 +2646,24 @@ export default function AdminDashboard() {
                           <tr key={b.id || b.slug} className="hover:bg-slate-50/70 transition-colors">
                             <td className="py-4 pr-4">
                               <div className="flex items-center gap-3">
-                                <img
-                                  src={b.image}
-                                  alt={b.image_alt || b.title}
-                                  className="h-12 w-16 rounded-xl object-cover border border-slate-200"
-                                />
+                                {b.image ? (
+                                  <img
+                                    src={marketApi.resolveAssetUrl(b.image)}
+                                    alt={b.image_alt || b.title}
+                                    className="h-12 w-16 rounded-xl object-cover border border-slate-200 bg-slate-100 shrink-0"
+                                    onError={(e) => {
+                                      e.currentTarget.style.display = "none";
+                                      const placeholder = e.currentTarget.nextElementSibling;
+                                      if (placeholder) placeholder.style.display = "flex";
+                                    }}
+                                  />
+                                ) : null}
+                                <div
+                                  className="h-12 w-16 rounded-xl bg-slate-100 border border-slate-200 items-center justify-center text-slate-400 shrink-0"
+                                  style={{ display: b.image ? "none" : "flex" }}
+                                >
+                                  <BookOpen className="h-5 w-5" />
+                                </div>
                                 <div>
                                   <button
                                     onClick={() => handleOpenEditPost(b)}

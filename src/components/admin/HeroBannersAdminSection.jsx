@@ -253,9 +253,12 @@ export default function HeroBannersAdminSection({ onNotify }) {
                 {desktopPreview ? (
                   <>
                     <img
-                      src={desktopPreview}
+                      src={marketApi.resolveAssetUrl(desktopPreview)}
                       alt={desktopAlt || "Desktop Banner"}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
@@ -364,9 +367,12 @@ export default function HeroBannersAdminSection({ onNotify }) {
                 {mobilePreview ? (
                   <>
                     <img
-                      src={mobilePreview}
+                      src={marketApi.resolveAssetUrl(mobilePreview)}
                       alt={mobileAlt || "Mobile Banner"}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                       <button
@@ -502,9 +508,12 @@ export default function HeroBannersAdminSection({ onNotify }) {
             <div className="relative aspect-video w-full max-w-4xl overflow-hidden rounded-2xl border border-white/20 bg-black shadow-2xl">
               {desktopPreview ? (
                 <img
-                  src={desktopPreview}
+                  src={marketApi.resolveAssetUrl(desktopPreview)}
                   alt={desktopAlt || "Desktop Preview"}
                   className="h-full w-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
                 />
               ) : (
                 <div className="flex h-full items-center justify-center text-xs text-slate-400">
@@ -530,9 +539,12 @@ export default function HeroBannersAdminSection({ onNotify }) {
 
               {mobilePreview ? (
                 <img
-                  src={mobilePreview}
+                  src={marketApi.resolveAssetUrl(mobilePreview)}
                   alt={mobileAlt || "Mobile Preview"}
                   className="h-full w-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
                 />
               ) : (
                 <div className="flex h-full items-center justify-center p-4 text-center text-xs text-slate-400">

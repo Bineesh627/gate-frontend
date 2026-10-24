@@ -70,15 +70,10 @@ export default function Hero({ content }) {
   const ctaSecondaryLink = banner?.cta_secondary_link || "/stores";
 
   // Images and separate alt options for desktop and mobile views
-  const desktopImage =
-    banner?.desktop_image ||
-    content?.hero_image ||
-    "";
-  const mobileImage =
-    banner?.mobile_image ||
-    banner?.desktop_image ||
-    content?.hero_image ||
-    "";
+  const rawDesktop = banner?.desktop_image || content?.hero_image || "";
+  const rawMobile = banner?.mobile_image || banner?.desktop_image || content?.hero_image || "";
+  const desktopImage = marketApi.resolveAssetUrl(rawDesktop);
+  const mobileImage = marketApi.resolveAssetUrl(rawMobile);
   const desktopAlt =
     banner?.desktop_alt ||
     banner?.alt_text ||

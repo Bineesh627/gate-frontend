@@ -822,9 +822,12 @@ export default function FlyersAdminSection({
                               title="Click to view cover preview"
                             >
                               <img
-                                src={coverImg}
+                                src={marketApi.resolveAssetUrl(coverImg)}
                                 alt={c.cover_alt || c.title}
                                 className="h-full w-full object-contain group-hover/thumb:scale-110 transition-transform"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                }}
                               />
                               <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity">
                                 <Eye className="h-4 w-4 text-white" />
@@ -1272,9 +1275,12 @@ export default function FlyersAdminSection({
                           {p.image ? (
                             <>
                               <img
-                                src={p.image}
+                                src={marketApi.resolveAssetUrl(p.image)}
                                 alt={p.alt || `Page ${index + 1}`}
                                 className="h-full w-full object-contain group-hover/thumb:scale-105 transition-transform"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                }}
                               />
                               <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity">
                                 <Eye className="h-4 w-4 text-white" />
@@ -1441,7 +1447,7 @@ export default function FlyersAdminSection({
               <X className="h-5 w-5" />
             </button>
             <img
-              src={previewImage}
+              src={marketApi.resolveAssetUrl(previewImage)}
               alt="Preview"
               className="max-h-[85vh] w-auto rounded-xl object-contain"
             />

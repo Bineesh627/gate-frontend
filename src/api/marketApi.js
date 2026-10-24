@@ -18,20 +18,35 @@ export const SERVER_BASE_URL = (
  * in production or local environments.
  */
 export function resolveAssetUrl(url) {
-  if (!url || typeof url !== 'string') return url || '';
+  if (!url || typeof url !== 'string') return '';
+  const clean = url.trim().replace(/\\/g, '/');
   if (
-    url.startsWith('http://') ||
-    url.startsWith('https://') ||
-    url.startsWith('data:') ||
-    url.startsWith('blob:')
+    clean.startsWith('data:') ||
+    clean.startsWith('blob:')
   ) {
-    return url;
+    return clean;
   }
-  if (url.startsWith('/uploads/') || url.startsWith('uploads/')) {
-    const cleanPath = url.startsWith('/') ? url : `/${url}`;
+
+  if (clean.startsWith('http://') || clean.startsWith('https://')) {
+    if (SERVER_BASE_URL && (clean.includes('localhost:') || clean.includes('127.0.0.1:')) && clean.includes('/uploads/')) {
+      const uploadIdx = clean.indexOf('/uploads/');
+      return `${SERVER_BASE_URL}${clean.substring(uploadIdx)}`;
+    }
+    return clean;
+  }
+
+  if (clean.startsWith('/uploads/') || clean.startsWith('uploads/')) {
+    const cleanPath = clean.startsWith('/') ? clean : `/${clean}`;
     return SERVER_BASE_URL ? `${SERVER_BASE_URL}${cleanPath}` : cleanPath;
   }
-  return url;
+
+  if (clean.includes('/uploads/')) {
+    const uploadIdx = clean.indexOf('/uploads/');
+    const cleanPath = clean.substring(uploadIdx);
+    return SERVER_BASE_URL ? `${SERVER_BASE_URL}${cleanPath}` : cleanPath;
+  }
+
+  return clean;
 }
 
 

@@ -17,10 +17,11 @@ export default function FlyerPage({ page, campaign, index, total }) {
   if (imageUrl) {
     return (
       <div className="relative h-full w-full overflow-hidden bg-slate-950 flex items-center justify-center select-none group">
-        <img
+        <Image
           src={imageUrl}
           alt={altText}
           className="h-full w-full object-contain pointer-events-none"
+          fittingType="fit"
           loading={index === 0 ? "eager" : "lazy"}
         />
         {/* Page numbering badge */}

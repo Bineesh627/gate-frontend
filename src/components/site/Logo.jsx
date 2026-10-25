@@ -8,7 +8,19 @@ export default function Logo({
   className = "",
   imgClassName = "",
 }) {
-  if (variant === "header" || variant === "icon") {
+  if (variant === "header") {
+    return (
+      <Link to="/" className={`inline-flex items-center shrink-0 ${className}`} aria-label="Gate home">
+        <img
+          src={BRAND.fullLogo}
+          alt="Gate Hypermarket"
+          className={imgClassName || "h-10 sm:h-12 w-auto object-contain"}
+        />
+      </Link>
+    );
+  }
+
+  if (variant === "icon") {
     return (
       <Link to="/" className={`flex items-center gap-2.5 shrink-0 ${className}`} aria-label="Gate home">
         <img

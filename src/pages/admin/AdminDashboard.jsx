@@ -1299,7 +1299,7 @@ export default function AdminDashboard() {
                             })
                           }
                           className="w-full rounded-xl bg-slate-50/50 border border-slate-200 px-4 py-2.5 text-sm focus:bg-white focus:border-[#007BB5] focus:ring-3 focus:ring-[#007BB5]/10 outline-none transition-all"
-                          placeholder="https://instagram.com/gatehypermarket"
+                          placeholder="https://instagram.com"
                         />
                       </div>
                       <div>
@@ -1318,7 +1318,7 @@ export default function AdminDashboard() {
                             })
                           }
                           className="w-full rounded-xl bg-slate-50/50 border border-slate-200 px-4 py-2.5 text-sm focus:bg-white focus:border-[#007BB5] focus:ring-3 focus:ring-[#007BB5]/10 outline-none transition-all"
-                          placeholder="https://facebook.com/gatehypermarket"
+                          placeholder="https://facebook.com"
                         />
                       </div>
                       <div>
@@ -1337,7 +1337,7 @@ export default function AdminDashboard() {
                             })
                           }
                           className="w-full rounded-xl bg-slate-50/50 border border-slate-200 px-4 py-2.5 text-sm focus:bg-white focus:border-[#007BB5] focus:ring-3 focus:ring-[#007BB5]/10 outline-none transition-all"
-                          placeholder="https://tiktok.com/@gatehypermarket"
+                          placeholder="https://tiktok.com"
                         />
                       </div>
                       <div>
@@ -1356,7 +1356,7 @@ export default function AdminDashboard() {
                             })
                           }
                           className="w-full rounded-xl bg-slate-50/50 border border-slate-200 px-4 py-2.5 text-sm focus:bg-white focus:border-[#007BB5] focus:ring-3 focus:ring-[#007BB5]/10 outline-none transition-all"
-                          placeholder="https://youtube.com/@gatehypermarket"
+                          placeholder="https://youtube.com"
                         />
                       </div>
                       <div>
@@ -1375,7 +1375,7 @@ export default function AdminDashboard() {
                             })
                           }
                           className="w-full rounded-xl bg-slate-50/50 border border-slate-200 px-4 py-2.5 text-sm focus:bg-white focus:border-[#007BB5] focus:ring-3 focus:ring-[#007BB5]/10 outline-none transition-all"
-                          placeholder="https://twitter.com/gatehypermarket"
+                          placeholder="https://twitter.com"
                         />
                       </div>
                     </div>
@@ -1779,7 +1779,7 @@ export default function AdminDashboard() {
                                 onError={(e) => {
                                   e.currentTarget.style.display = "none";
                                   const placeholder = e.currentTarget.nextElementSibling;
-                                  if (placeholder) placeholder.style.display = "flex";
+                                  if (placeholder instanceof HTMLElement) placeholder.style.display = "flex";
                                 }}
                               />
                             ) : null}
@@ -2159,7 +2159,7 @@ export default function AdminDashboard() {
                               onError={(e) => {
                                 e.currentTarget.style.display = "none";
                                 const fallback = e.currentTarget.nextElementSibling;
-                                if (fallback) fallback.style.display = "flex";
+                                if (fallback instanceof HTMLElement) fallback.style.display = "flex";
                               }}
                             />
                             <div className="hidden h-full w-full items-center justify-center text-xs text-rose-500 bg-rose-50 font-medium">
@@ -2474,7 +2474,7 @@ export default function AdminDashboard() {
                                 onError={(e) => {
                                   e.currentTarget.style.display = "none";
                                   const fallback = e.currentTarget.nextElementSibling;
-                                  if (fallback) fallback.style.display = "flex";
+                                  if (fallback instanceof HTMLElement) fallback.style.display = "flex";
                                 }}
                               />
                               <div className="hidden h-full w-full items-center justify-center text-xs text-rose-500 bg-rose-50 font-medium">
@@ -2649,7 +2649,7 @@ export default function AdminDashboard() {
                                     onError={(e) => {
                                       e.currentTarget.style.display = "none";
                                       const placeholder = e.currentTarget.nextElementSibling;
-                                      if (placeholder) placeholder.style.display = "flex";
+                                      if (placeholder instanceof HTMLElement) placeholder.style.display = "flex";
                                     }}
                                   />
                                 ) : null}

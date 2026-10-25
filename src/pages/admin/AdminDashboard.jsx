@@ -1021,9 +1021,8 @@ export default function AdminDashboard() {
           SIDEBAR NAVIGATION (DESKTOP & MOBILE RESPONSIVE)
       ======================================================== */}
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-64 bg-[#07131B] text-white flex flex-col transition-all duration-300 ease-in-out border-r border-white/5 shadow-2xl lg:shadow-none ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 bottom-0 left-0 z-50 w-64 bg-[#07131B] text-white flex flex-col transition-all duration-300 ease-in-out border-r border-white/5 shadow-2xl lg:shadow-none ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         {/* Brand Header */}
         <div className="h-20 px-6 flex items-center justify-between border-b border-white/10">
@@ -1061,11 +1060,10 @@ export default function AdminDashboard() {
                     setSidebarOpen(false);
                   }
                 }}
-                className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold transition-all ${
-                  active
+                className={`w-full flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold transition-all ${active
                     ? "bg-[#007BB5] text-white shadow-md shadow-[#007BB5]/30 font-bold"
                     : "text-white/70 hover:text-white hover:bg-white/5"
-                }`}
+                  }`}
               >
                 <div className="flex items-center gap-3">
                   <Icon className={`h-4.5 w-4.5 ${active ? "text-white" : "text-white/60"}`} />
@@ -1073,9 +1071,8 @@ export default function AdminDashboard() {
                 </div>
                 {item.badge !== undefined && item.badge > 0 && (
                   <span
-                    className={`rounded-full px-2 py-0.5 text-xs font-bold ${
-                      item.badgeColor ? `${item.badgeColor} text-white` : "bg-white/15 text-white"
-                    }`}
+                    className={`rounded-full px-2 py-0.5 text-xs font-bold ${item.badgeColor ? `${item.badgeColor} text-white` : "bg-white/15 text-white"
+                      }`}
                   >
                     {item.badge}
                   </span>
@@ -1123,9 +1120,8 @@ export default function AdminDashboard() {
           MAIN CONTENT VIEWPORT
       ======================================================== */}
       <main
-        className={`flex-1 flex flex-col min-w-0 transition-all duration-300 ease-in-out ${
-          sidebarOpen ? "lg:pl-64" : "pl-0"
-        }`}
+        className={`flex-1 flex flex-col min-w-0 transition-all duration-300 ease-in-out ${sidebarOpen ? "lg:pl-64" : "pl-0"
+          }`}
       >
         {/* Top Header Bar */}
         <header className="h-16 bg-white border-b border-slate-200/80 px-6 flex items-center justify-between sticky top-0 z-30 shadow-xs">
@@ -1146,20 +1142,20 @@ export default function AdminDashboard() {
                     ? "Edit Article"
                     : "Add New Article"
                   : activeTab === "banners"
-                  ? "Home Hero Banners"
-                  : activeTab === "careers"
-                  ? "Careers & Recruitment"
-                  : activeTab === "stores" && storeViewMode === "form"
-                  ? editingStore
-                    ? "Edit Store Branch"
-                    : "Add New Store"
-                  : activeTab === "campaigns"
-                  ? action === "new" || action === "add"
-                    ? "Add New Flyer"
-                    : action === "edit"
-                    ? "Edit Flyer"
-                    : "Flyers & Campaigns"
-                  : activeTab}
+                    ? "Home Hero Banners"
+                    : activeTab === "careers"
+                      ? "Careers & Recruitment"
+                      : activeTab === "stores" && storeViewMode === "form"
+                        ? editingStore
+                          ? "Edit Store Branch"
+                          : "Add New Store"
+                        : activeTab === "campaigns"
+                          ? action === "new" || action === "add"
+                            ? "Add New Flyer"
+                            : action === "edit"
+                              ? "Edit Flyer"
+                              : "Flyers & Campaigns"
+                          : activeTab}
               </span>
             </div>
           </div>
@@ -2041,11 +2037,10 @@ export default function AdminDashboard() {
                                 type="button"
                                 key={dp}
                                 onClick={() => updateStoreHoursFromBuilder(dp, storeHoursOpen, storeHoursClose)}
-                                className={`px-2.5 py-1 text-xs rounded-lg font-semibold transition-all ${
-                                  storeHoursDays === dp
+                                className={`px-2.5 py-1 text-xs rounded-lg font-semibold transition-all ${storeHoursDays === dp
                                     ? "bg-[#007BB5] text-white shadow-xs"
                                     : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100"
-                                }`}
+                                  }`}
                               >
                                 {dp}
                               </button>
@@ -2374,7 +2369,7 @@ export default function AdminDashboard() {
 
                         <div className="rounded-2xl border border-slate-200 bg-slate-50/50 p-5 space-y-1.5 font-sans">
                           <div className="text-xs text-slate-700 flex items-center gap-1.5">
-                            <span className="text-slate-800">gatehypermarket.ae</span>
+                            <span className="text-slate-800">www.gateuae.com</span>
                             <span className="text-slate-400">› blog › {postSlug || "your-slug"}</span>
                           </div>
                           <h5 className="text-lg text-[#1a0dab] font-medium hover:underline cursor-pointer truncate">
@@ -2800,11 +2795,10 @@ export default function AdminDashboard() {
                     <button
                       key={p}
                       onClick={() => handlePageChange(p)}
-                      className={`rounded-xl px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
-                        selectedPage === p
+                      className={`rounded-xl px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${selectedPage === p
                           ? "bg-[#007BB5] text-white shadow-md shadow-[#007BB5]/25"
                           : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
-                      }`}
+                        }`}
                     >
                       {p} Page
                     </button>
@@ -3054,9 +3048,8 @@ export default function AdminDashboard() {
                         <td className="py-4 pr-3 text-sm text-slate-700 max-w-xs">{inq.message}</td>
                         <td className="py-4 pr-3">
                           <span
-                            className={`rounded-full px-2.5 py-1 text-xs font-bold uppercase ${
-                              inq.status === "unread" ? "bg-amber-100 text-amber-800" : "bg-emerald-100 text-emerald-800"
-                            }`}
+                            className={`rounded-full px-2.5 py-1 text-xs font-bold uppercase ${inq.status === "unread" ? "bg-amber-100 text-amber-800" : "bg-emerald-100 text-emerald-800"
+                              }`}
                           >
                             {inq.status}
                           </span>

@@ -31,4 +31,4 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://www.gateuae.com/sitemap.xml

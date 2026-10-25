@@ -137,7 +137,7 @@ export default function AdminLogin() {
     <div className="min-h-screen bg-[#0B1A22] flex items-center justify-center p-5">
       <div className="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-2xl">
         <div className="flex flex-col items-center text-center">
-          <Logo />
+          <Logo imgClassName="h-14 w-auto object-contain" />
           <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#007BB5]/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#007BB5]">
             <ShieldCheck className="h-4 w-4" /> Admin Portal
           </div>

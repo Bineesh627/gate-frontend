@@ -1,5 +1,6 @@
 export const BRAND = {
   logo: "/images/logo.png",
+  fullLogo: "/images/logo-full.png",
 };
 
 export const stores = [];

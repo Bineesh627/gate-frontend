@@ -35,7 +35,7 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-5 lg:px-8 h-[72px] flex items-center justify-between gap-6">
-        <Logo />
+        <Logo variant="header" />
 
         <nav className="hidden lg:flex items-center gap-9">
           {links.map((l) => (

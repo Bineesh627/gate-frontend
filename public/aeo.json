@@ -6,20 +6,19 @@
         "Organization",
         "Supermarket"
       ],
-      "@id": "https://yourdomain.com/#organization",
+      "@id": "https://www.gateuae.com/#organization",
       "name": "Gate Hypermarket",
-      "url": "https://yourdomain.com",
-      "logo": "https://yourdomain.com/images/logo.png",
-      "image": "https://yourdomain.com/images/hero-banner.jpg",
+      "url": "https://www.gateuae.com",
+      "logo": "https://www.gateuae.com/images/logo-full.png",
+      "image": "https://www.gateuae.com/images/hero-banner.jpg",
       "description": "Hello how are you are you free right know",
       "telephone": "123456789",
       "email": "gate@gmail.com",
       "sameAs": [
-        "https://instagram.com/gatehypermarket",
-        "https://facebook.com/gatehypermarket",
-        "https://youtube.com/@gatehypermarket",
-        "https://twitter.com/gatehypermarket",
-        "https://tiktok.com/@gatehypermarket"
+        "https://www.instagram.com/gate.albarsha/",
+        "https://www.facebook.com/profile.php?id=61576920945881",
+        "https://www.tiktok.com/@gate_albarsha",
+        "https://www.youtube.com/@gatedubai"
       ],
       "areaServed": [
         {
@@ -36,10 +35,10 @@
       "department": [
         {
           "@type": "GroceryStore",
-          "@id": "https://yourdomain.com/stores/al-barsha#store",
+          "@id": "https://www.gateuae.com/stores/al-barsha#store",
           "name": "Al Barsha ",
-          "url": "https://yourdomain.com/stores/al-barsha",
-          "image": "https://yourdomain.com/uploads/stores/WhatsApp_Image_2026-09-01_at_11_30_15-1792491265526-633614920.jpeg",
+          "url": "https://www.gateuae.com/stores/al-barsha",
+          "image": "https://www.gateuae.com/uploads/stores/WhatsApp_Image_2026-09-01_at_11_30_15-1792491265526-633614920.jpeg",
           "telephone": "+91 1234567890",
           "address": {
             "@type": "PostalAddress",
@@ -60,7 +59,7 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://yourdomain.com/#faq",
+      "@id": "https://www.gateuae.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -83,7 +82,7 @@
           "name": "Where can I view current promotion flyers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Current multi-page promotional circulars can be viewed online at https://yourdomain.com/promotions."
+            "text": "Current multi-page promotional circulars can be viewed online at https://www.gateuae.com/promotions."
           }
         },
         {
@@ -91,7 +90,7 @@
           "name": "How do I apply for jobs at Gate Hypermarket?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Job opportunities and direct CV submission are available at https://yourdomain.com/careers."
+            "text": "Job opportunities and direct CV submission are available at https://www.gateuae.com/careers."
           }
         }
       ]

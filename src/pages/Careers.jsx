@@ -44,7 +44,7 @@ export default function Careers() {
           setAllDepartments(["All", ...uniqueDepts]);
         }
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   // Apply Modal state
@@ -84,7 +84,7 @@ export default function Careers() {
           }
         }
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -266,16 +266,16 @@ export default function Careers() {
                 {Array.from(new Set(jobs.map((j) => j.location).filter(Boolean)))
                   .filter((loc) => !stores?.some((s) => loc?.includes(s.name)))
                   .length > 0 && (
-                  <optgroup label="Other Locations">
-                    {Array.from(new Set(jobs.map((j) => j.location).filter(Boolean)))
-                      .filter((loc) => !stores?.some((s) => loc?.includes(s.name)))
-                      .map((loc) => (
-                        <option key={loc} value={loc}>
-                          {loc}
-                        </option>
-                      ))}
-                  </optgroup>
-                )}
+                    <optgroup label="Other Locations">
+                      {Array.from(new Set(jobs.map((j) => j.location).filter(Boolean)))
+                        .filter((loc) => !stores?.some((s) => loc?.includes(s.name)))
+                        .map((loc) => (
+                          <option key={loc} value={loc}>
+                            {loc}
+                          </option>
+                        ))}
+                    </optgroup>
+                  )}
               </select>
             </div>
 
@@ -306,11 +306,10 @@ export default function Careers() {
                 <button
                   key={dept}
                   onClick={() => setSelectedDept(dept)}
-                  className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all ${
-                    selectedDept === dept
+                  className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all ${selectedDept === dept
                       ? "bg-[#007BB5] text-white shadow-md shadow-[#007BB5]/25"
                       : "bg-slate-100 text-gray-600 hover:bg-slate-200"
-                  }`}
+                    }`}
                 >
                   {dept}
                 </button>
@@ -510,10 +509,10 @@ export default function Careers() {
                 Contact HR Team
               </Link>
               <a
-                href="mailto:careers@gatehypermarket.ae"
+                href="mailto:hr@gateuae.com"
                 className="rounded-full border border-white/20 bg-white/10 px-7 py-3 text-sm font-semibold text-white hover:bg-white/20 transition-all"
               >
-                Email CV to careers@gatehypermarket.ae
+                Email CV to hr@gateuae.com
               </a>
             </div>
           </div>

@@ -541,13 +541,12 @@ export default function JobDetail() {
                       Upload Resume / CV <span className="text-red-500">*</span>
                     </label>
                     <div
-                      className={`border-2 border-dashed rounded-3xl p-6 text-center transition-all ${
-                        resumeUrl
+                      className={`border-2 border-dashed rounded-3xl p-6 text-center transition-all ${resumeUrl
                           ? "border-emerald-500 bg-emerald-50/40"
                           : uploadError
-                          ? "border-red-300 bg-red-50/30"
-                          : "border-slate-300 hover:border-[#007BB5] bg-slate-50/50"
-                      }`}
+                            ? "border-red-300 bg-red-50/30"
+                            : "border-slate-300 hover:border-[#007BB5] bg-slate-50/50"
+                        }`}
                     >
                       {uploadingResume ? (
                         <div className="py-4 flex flex-col items-center justify-center gap-2">
@@ -733,10 +732,10 @@ export default function JobDetail() {
               </p>
               <div className="mt-4 space-y-2 text-xs">
                 <a
-                  href="mailto:careers@gatehypermarket.ae"
+                  href="mailto:hr@gateuae.com"
                   className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
                 >
-                  <Mail className="h-4 w-4 text-[#4CC9F0]" /> careers@gatehypermarket.ae
+                  <Mail className="h-4 w-4 text-[#4CC9F0]" /> hr@gateuae.com
                 </a>
                 <Link
                   to="/contact"

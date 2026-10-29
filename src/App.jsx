@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import PageNotFound from './lib/PageNotFound';
 import { MarketProvider } from '@/context/MarketContext';
 import ScrollToTop from './components/ScrollToTop';
+import TawkManager from './components/TawkManager';
 
 // Add page imports here
 import Layout from '@/components/site/Layout';
@@ -27,6 +28,7 @@ function App() {
       <QueryClientProvider client={queryClientInstance}>
         <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <ScrollToTop />
+          <TawkManager />
           <Routes>
             {/* Admin routes */}
             <Route path="/admin/login" element={<AdminLogin />} />

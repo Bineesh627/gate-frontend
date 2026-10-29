@@ -204,3 +204,16 @@
     border-top: 1px solid #e2e8f0;
   }
 }
+
+/* Hide Tawk.to Live Chat widget inside Admin Panel */
+body.hide-tawk-widget iframe[src*="tawk.to"],
+body.hide-tawk-widget [id*="tawk"],
+body.hide-tawk-widget [class*="tawk"],
+body.hide-tawk-widget .widget-visible,
+body.hide-tawk-widget #chat-widget-container {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  z-index: -9999 !important;
+}

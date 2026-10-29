@@ -148,6 +148,17 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>{copyright}</p>
+          <p className="text-white/35 text-xs">
+            Created with ❤️ by{" "}
+            <a
+              href="https://coreprotechno.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/55 hover:text-[#4CC9F0] transition-colors font-semibold"
+            >
+              CorePro Techno LLP
+            </a>
+          </p>
         </div>
       </div>
     </footer>

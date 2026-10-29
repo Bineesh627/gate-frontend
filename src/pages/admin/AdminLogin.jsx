@@ -10,6 +10,8 @@ import {
   KeyRound,
   CheckCircle2,
   Key,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 import { marketApi } from "@/api/marketApi";
 import Logo from "@/components/site/Logo";
@@ -41,6 +43,11 @@ export default function AdminLogin() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+
+  // Password visibility toggles
+  const [showLoginPass, setShowLoginPass] = useState(false);
+  const [showNewPass, setShowNewPass] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
 
   useEffect(() => {
     if (urlResetToken) {
@@ -215,7 +222,7 @@ export default function AdminLogin() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-2xl border border-black/15 pl-12 pr-4 py-3.5 text-sm outline-none transition-colors focus:border-[#007BB5]"
-                  placeholder="admin@gatehypermarket.ae"
+                  placeholder="example@gmail.com"
                 />
               </div>
             </div>
@@ -246,14 +253,22 @@ export default function AdminLogin() {
                 <input
                   id="admin-password"
                   name="password"
-                  type="password"
+                  type={showLoginPass ? "text" : "password"}
                   autoComplete="current-password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full rounded-2xl border border-black/15 pl-12 pr-4 py-3.5 text-sm outline-none transition-colors focus:border-[#007BB5]"
+                  className="w-full rounded-2xl border border-black/15 pl-12 pr-12 py-3.5 text-sm outline-none transition-colors focus:border-[#007BB5]"
                   placeholder="Enter your password"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowLoginPass(!showLoginPass)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-black/40 hover:text-black/70 transition-colors"
+                  aria-label={showLoginPass ? "Hide password" : "Show password"}
+                >
+                  {showLoginPass ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                </button>
               </div>
             </div>
 
@@ -359,7 +374,7 @@ export default function AdminLogin() {
                   value={resetEmail}
                   onChange={(e) => setResetEmail(e.target.value)}
                   className="w-full rounded-2xl border border-black/15 pl-12 pr-4 py-3 text-sm outline-none transition-colors focus:border-[#007BB5]"
-                  placeholder="admin@gatehypermarket.ae"
+                  placeholder="example@gmail.com"
                 />
               </div>
             </div>
@@ -398,14 +413,22 @@ export default function AdminLogin() {
                 <input
                   id="new-password"
                   name="newPassword"
-                  type="password"
+                  type={showNewPass ? "text" : "password"}
                   autoComplete="new-password"
                   required
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  className="w-full rounded-2xl border border-black/15 pl-12 pr-4 py-3 text-sm outline-none transition-colors focus:border-[#007BB5]"
+                  className="w-full rounded-2xl border border-black/15 pl-12 pr-12 py-3 text-sm outline-none transition-colors focus:border-[#007BB5]"
                   placeholder="Min 6 characters"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowNewPass(!showNewPass)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-black/40 hover:text-black/70 transition-colors"
+                  aria-label={showNewPass ? "Hide password" : "Show password"}
+                >
+                  {showNewPass ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                </button>
               </div>
             </div>
 
@@ -421,14 +444,22 @@ export default function AdminLogin() {
                 <input
                   id="confirm-password"
                   name="confirmPassword"
-                  type="password"
+                  type={showConfirmPass ? "text" : "password"}
                   autoComplete="new-password"
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full rounded-2xl border border-black/15 pl-12 pr-4 py-3 text-sm outline-none transition-colors focus:border-[#007BB5]"
+                  className="w-full rounded-2xl border border-black/15 pl-12 pr-12 py-3 text-sm outline-none transition-colors focus:border-[#007BB5]"
                   placeholder="Re-type new password"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPass(!showConfirmPass)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-black/40 hover:text-black/70 transition-colors"
+                  aria-label={showConfirmPass ? "Hide password" : "Show password"}
+                >
+                  {showConfirmPass ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                </button>
               </div>
             </div>
 
